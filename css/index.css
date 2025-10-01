@@ -146,6 +146,54 @@ section h2 {
   background: #0055a5;
 }
 
+/* Message Form Section */
+
+#LeaveMessage h2 {
+  color: #003366;
+  margin-bottom: 1rem;
+  font-family: "Georgia", serif;
+}
+
+#LeaveMessage form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#LeaveMessage label {
+  font-weight: 600;
+}
+
+#LeaveMessage input,
+#LeaveMessage textarea {
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#LeaveMessage textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+#LeaveMessage button {
+  padding: 0.8rem 1.2rem;
+  background-color: #003366;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#LeaveMessage button:hover {
+  background-color: #0055a5;
+}
+
 footer {
   margin-top: 2rem;
   padding: 1.2rem;
@@ -172,6 +220,21 @@ footer {
     padding: 0.8rem;
   }
 
+  #LeaveMessage {
+    padding: 0.8rem;
+  }
+
+  #LeaveMessage input,
+  #LeaveMessage textarea {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.6rem;
+  }
+
+  #LeaveMessage button {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+
   footer {
     font-size: 0.9rem;
     padding: 1rem;
@@ -193,6 +256,20 @@ footer {
   section {
     width: 90%;
     padding: 1rem;
+  }
+
+  #LeaveMessage {
+    padding: 1rem;
+  }
+
+  #LeaveMessage input,
+  #LeaveMessage textarea {
+    font-size: 1rem;
+  }
+
+  #LeaveMessage button {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
   }
 
   footer {
@@ -235,6 +312,21 @@ footer {
     justify-items: left;
   }
 
+  LeaveMessage form {
+    gap: 1rem;
+  }
+
+  #LeaveMessage input,
+  #LeaveMessage textarea {
+    font-size: 1.05rem;
+    padding: 0.8rem;
+  }
+
+  #LeaveMessage button {
+    font-size: 1.05rem;
+    padding: 0.9rem 1.4rem;
+  }
+
   footer {
     padding: 1.5rem;
     font-size: 1.2rem;
@@ -249,6 +341,7 @@ footer {
 
 @media (min-width: 1025px) {
   nav ul {
+    flex-direction: row;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -274,6 +367,17 @@ footer {
     grid-template-columns: repeat(2, max-content);
     gap: 0.5rem;
     justify-items: start;
+  }
+
+  #LeaveMessage input,
+  #LeaveMessage textarea {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  #LeaveMessage button {
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
   }
 
   footer {
