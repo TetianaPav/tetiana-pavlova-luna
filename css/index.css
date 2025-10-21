@@ -2,7 +2,7 @@ html {
   scroll-padding-top: 130px;
 }
 
-/* Mobile Style */
+/* Global style */
 
 body {
   background-color: #fafafa;
@@ -13,6 +13,7 @@ body {
   line-height: 1.6;
 }
 
+/* Navigation */
 nav {
   background: #003366;
   padding: 1rem;
@@ -43,6 +44,8 @@ nav a {
 nav a:hover {
   color: #0055a5;
 }
+
+/* Heading and Sections */
 
 h1 {
   text-align: center;
@@ -76,11 +79,15 @@ section h2 {
   font-family: "Georgia", serif;
 }
 
+/* About */
+
 #About p {
   font-size: 1.1rem;
   margin-top: 0.5rem;
   text-align: justify;
 }
+
+/* Experience */
 
 .experience-item {
   margin-bottom: 1rem;
@@ -107,6 +114,8 @@ section h2 {
   font-size: 0.9rem;
 }
 
+/* Skills */
+
 #Skills ul {
   list-style: none;
   padding: 1rem;
@@ -123,6 +132,8 @@ section h2 {
   font-weight: 500;
   color: #333333;
 }
+
+/* Connect */
 
 #Connect ul {
   list-style: none;
@@ -146,7 +157,7 @@ section h2 {
   background: #0055a5;
 }
 
-/* Message Form Section */
+/* Leave Message */
 
 #LeaveMessage h2 {
   color: #003366;
@@ -194,6 +205,8 @@ section h2 {
   background-color: #0055a5;
 }
 
+/* Footer */
+
 footer {
   margin-top: 2rem;
   padding: 1.2rem;
@@ -203,8 +216,125 @@ footer {
   color: white;
 }
 
-/* for screens up to 480px */
+/* Projects */
 
+#Projects h2 {
+  text-align: left;
+  color: #003366;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  font-family: "Georgia", serif;
+}
+
+#Projects ul {
+  display: grid;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-items: left;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(2, max-content);
+}
+
+#Projects li {
+  text-align: center;
+}
+
+#Projects a {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #003366;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+#Projects a:hover {
+  background: #0055aa;
+  transform: scale(1.05);
+}
+/* Messages */
+
+/* message sender link  */
+#Messages a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #003366;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#Messages a:hover {
+  background-color: #0055a5;
+  transform: scale(1.05);
+}
+
+#Messages li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 0.6rem;
+  background: #f2f6fa;
+  border-radius: 6px;
+  flex-wrap: nowrap;
+}
+
+/* Edit Button */
+
+.edit-button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.edit-button:hover {
+  background-color: #3399ff;
+  transform: scale(1.05);
+}
+
+/* Remove Button */
+.remove-button {
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #ff3333;
+  transform: scale(1.05);
+}
+
+/* Button container (Edit + Remove) */
+.message-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* space between buttons */
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+/* RESPONSIVE STYLES */
+
+/* for screens up to 480px */
 @media (max-width: 480px) {
   nav ul {
     flex-direction: column;
@@ -278,8 +408,7 @@ footer {
   }
 }
 
-/* Tablet Style */
-/* tablet/laptop, (769px-1024px) */
+/* Tablet Style (769px-1024px) */
 
 @media (min-width: 769px) and (max-width: 1024px) {
   nav ul {
@@ -303,6 +432,15 @@ footer {
   .exp-header {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  #Projects ul {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  #Projects a {
+    width: 90%;
   }
 
   #Connect ul {
@@ -336,8 +474,7 @@ footer {
   }
 }
 
-/* Desktop Style */
-/* desctop, (>1025px) */
+/* Desktop Style (>1025px) */
 
 @media (min-width: 1025px) {
   nav ul {
