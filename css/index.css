@@ -133,14 +133,62 @@ section h2 {
   color: #333333;
 }
 
-/* Connect */
+/* Projects */
+
+#Projects h2 {
+  text-align: left;
+  color: #003366;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  font-family: "Georgia", serif;
+}
+
+#Projects ul {
+  display: grid;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-items: left;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(2, max-content);
+}
+
+#Projects li {
+  text-align: center;
+}
+
+#Projects a {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #003366;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+#Projects a:hover {
+  background: #0055aa;
+  transform: scale(1.05);
+}
+
+/* ---------------------- Connect ------------------------ */
 
 #Connect ul {
   list-style: none;
   padding: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5rem;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+#Connect ul li {
+  margin: 0;
 }
 
 #Connect a {
@@ -150,11 +198,13 @@ section h2 {
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  transition: background 0.3s;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.3s;
 }
 
 #Connect a:hover {
   background: #0055a5;
+  transform: scale(1.05);
 }
 
 /* Leave Message */
@@ -216,45 +266,6 @@ footer {
   color: white;
 }
 
-/* Projects */
-
-#Projects h2 {
-  text-align: left;
-  color: #003366;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-  font-family: "Georgia", serif;
-}
-
-#Projects ul {
-  display: grid;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-items: left;
-  padding: 0;
-  list-style: none;
-  grid-template-columns: repeat(2, max-content);
-}
-
-#Projects li {
-  text-align: center;
-}
-
-#Projects a {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  background: #003366;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: background 0.3s;
-}
-
-#Projects a:hover {
-  background: #0055aa;
-  transform: scale(1.05);
-}
 /* Messages */
 
 /* message sender link  */
@@ -332,7 +343,7 @@ footer {
   margin-left: 10px;
 }
 
-/* RESPONSIVE STYLES */
+/* --------------------- RESPONSIVE STYLES ------------------------- */
 
 /* for screens up to 480px */
 @media (max-width: 480px) {
@@ -409,18 +420,24 @@ footer {
 }
 
 /* Tablet Style (769px-1024px) */
-
 @media (min-width: 769px) and (max-width: 1024px) {
   nav ul {
     flex-direction: row;
     gap: 1rem;
   }
 
+  nav a {
+    font-size: 1.1rem; /* larger nav links for readability */
+  }
+
   h1 {
     text-align: left;
     font-size: 2.2rem;
-    padding: 1.2rem 0;
-    padding-left: 1.5rem;
+    padding: 1.2rem 0 1.2rem 1.5rem;
+  }
+
+  body {
+    font-size: 1.15rem; /* increase base font for paragraphs */
   }
 
   section {
@@ -434,42 +451,46 @@ footer {
     justify-content: space-between;
   }
 
+  #About p,
+  .experience-item p {
+    font-size: 1.2rem; /* make paragraphs more readable */
+  }
+
   #Projects ul {
     grid-template-columns: 1fr;
     gap: 0.8rem;
   }
 
   #Projects a {
-    width: 90%;
+    width: max-content; /* buttons fit content, not stretched */
   }
 
   #Connect ul {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 0.5rem;
-    justify-items: left;
+    display: flex; /* flex row instead of grid for readability */
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: flex-start;
   }
 
-  LeaveMessage form {
+  #LeaveMessage form {
     gap: 1rem;
   }
 
   #LeaveMessage input,
   #LeaveMessage textarea {
-    font-size: 1.05rem;
-    padding: 0.8rem;
+    font-size: 1.1rem; /* slightly larger for tablet readability */
+    padding: 0.9rem;
   }
 
   #LeaveMessage button {
-    font-size: 1.05rem;
-    padding: 0.9rem 1.4rem;
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
   }
 
   footer {
     padding: 1.5rem;
     font-size: 1.2rem;
     border-radius: 8px;
-    background: #003366;
     text-align: center;
   }
 }
@@ -499,13 +520,6 @@ footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
   }
 
-  #Connect ul {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 0.5rem;
-    justify-items: start;
-  }
-
   #LeaveMessage input,
   #LeaveMessage textarea {
     font-size: 1.1rem;
@@ -525,4 +539,209 @@ footer {
     font-size: 1rem;
     color: white;
   }
+}
+/* ------------------------ DARK MODE STYLES --------------------------------*/
+
+body.dark-mode {
+  background-color: #37474f; /* main background */
+  color: #eceff1; /* main text */
+}
+
+/* Nav & Footer */
+body.dark-mode nav,
+body.dark-mode footer {
+  background-color: #263238;
+  color: #eceff1;
+}
+
+/* Nav link + hover */
+body.dark-mode nav a {
+  color: #eceff1; /* nav text links */
+}
+body.dark-mode nav a:hover {
+  color: #78909c; /* 🔹 change hover text color here */
+}
+
+/* Main heading */
+body.dark-mode h1 {
+  background-color: #263238;
+  color: #eceff1;
+}
+
+/* Sections */
+
+body.dark-mode section {
+  background-color: #455a64; /* dark section */
+  color: #eceff1;
+  border: 1.5px solid #546e7a; /* subtle border for readability */
+}
+
+/* Connect Icons */
+body.dark-mode .connect-icons li a {
+  background-color: #263238;
+  color: #eceff1;
+}
+
+body.dark-mode .connect-icons li a:hover {
+  background-color: #455a64;
+}
+
+/* Headings inside sections */
+body.dark-mode h2,
+body.dark-mode #Projects h2,
+body.dark-mode #LeaveMessage h2 {
+  color: #eceff1;
+  border-bottom-color: #90a4ae; /* lighter border for clarity */
+}
+
+/* Inputs and textareas */
+body.dark-mode #LeaveMessage input,
+body.dark-mode #LeaveMessage textarea {
+  background-color: #37474f; /*dark input fields */
+  color: #eceff1;
+  border: 1px solid #90a4ae;
+}
+
+/* Messages */
+body.dark-mode #Messages li,
+body.dark-mode #Messages li span {
+  color: black !important;
+}
+
+/* Experience Section Text in Dark Mode */
+body.dark-mode #Experience p {
+  color: black;
+}
+
+/* Buttons & Links */
+body.dark-mode #LeaveMessage button,
+body.dark-mode #Connect a,
+body.dark-mode #Projects a,
+body.dark-mode #Messages a {
+  background-color: #eceff1; /* dark mode buttons */
+  color: #263238;
+}
+
+/* Edit Button in Dark Mode */
+body.dark-mode .edit-button {
+  background-color: #444;
+  color: white;
+}
+body.dark-mode .edit-button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+/* Hover effects for buttons and links */
+body.dark-mode #LeaveMessage button:hover,
+body.dark-mode #Connect a:hover,
+body.dark-mode #Projects a:hover,
+body.dark-mode #Messages a:hover,
+body.dark-mode .edit-button:hover,
+body.dark-mode .remove-button:hover {
+  background-color: #d0d7de;
+  transform: scale(1.05);
+}
+
+/* Headings (general)*/
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #eceff1; /* headings */
+}
+
+/* Highlight messages span for readability */
+body.dark-mode #Messages span {
+  color: #eceff1;
+}
+
+/* ------------------------ THEME SWITCH STYLES ------------------------ */
+
+/* Sun (left) */
+.slider .sun {
+  color: #cfd8dc;
+}
+
+/* Moon (right) */
+.slider .moon {
+  color: #a3c4ff;
+}
+
+/* Theme Switch Wrapper */
+.theme-switch-wrapper {
+  position: absolute; /* top-right */
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+}
+
+/* Theme Switch Slider*/
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 72px;
+  height: 36px;
+}
+
+/* Hide checkbox */
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider Track */
+.slider {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+  background: linear-gradient(135deg, #0f2046, #003366);
+  border-radius: 36px;
+  cursor: pointer;
+  transition: background 0.5s ease;
+}
+
+/* Slider Knob */
+.slider::before {
+  content: "\f042";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 18px;
+  font-style: normal;
+  font-display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  left: 2px;
+  background-color: #eceff1;
+  border-radius: 50%;
+  transition: transform 0.4s ease, color 0.4s ease;
+  color: #0f2046;
+  z-index: 3; /* slider circle is above icons */
+}
+
+/* Icon Styling */
+.slider i {
+  pointer-events: none;
+  font-size: 18px;
+  z-index: 2;
+}
+
+/* Change track background when toggled */
+.theme-switch input:checked + .slider {
+  background: linear-gradient(135deg, #0f172a, #1f2937);
+}
+
+/* Knob Movement on Toggle */
+.theme-switch input:checked + .slider::before {
+  transform: translateX(36px); /* width - padding - knob width */
+  color: #37474f;
 }

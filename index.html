@@ -5,10 +5,26 @@
     <meta charset="UTF-8" />
     <meta name="author" content="Portfolio of Tetiana Pavlova" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link your CSS -->
     <link rel="stylesheet" href="css/index.css" />
+
+    <!-- Added Font Awesome CDN for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
     <nav>
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="theme-toggle">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider">
+            <i class="fa-solid fa-sun sun"></i>
+            <i class="fa-solid fa-moon moon"></i>
+          </span>
+        </label>
+      </div>
       <ul>
         <li><a href="#About">About</a></li>
         <li><a href="#Experience">Experience</a></li>
@@ -49,10 +65,21 @@
     </section>
     <section id="Connect">
       <h2>Connect</h2>
-      <ul>
-        <li><a href="https://github.com/TetianaPav">GitHub</a></li>
+      <ul class="connect-icons">
         <li>
-          <a href="https://www.linkedin.com/in/tetiana-pavlova/">LinkedIn</a>
+          <a href="https://github.com/username"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/username"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </li>
+        <li>
+          <a href="mailto:youremail@example.com"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
         </li>
       </ul>
     </section>
