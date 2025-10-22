@@ -26,25 +26,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* Messages */
 
+  const messageSection = document.querySelector("#Messages")
+  messageSection.style.display = "none" // hide initially
+
   const messageForm = document.forms["leave_message"]
-
   messageForm.addEventListener("submit", function (event) {
-    event.preventDefault()
+    event.preventDefault() // Prevent form from refreshing the page
 
+    // Retrieve input values
     const usersName = event.target.usersName.value
     const usersEmail = event.target.usersEmail.value
     const usersMessage = event.target.usersMessage.value
 
     console.log(usersName, usersEmail, usersMessage)
 
+    // Select the messages list container
     const messageSection = document.querySelector("#Messages")
     const messageList = messageSection.querySelector("ul")
 
+    // Create new message list item
     const newMessage = document.createElement("li")
     newMessage.innerHTML = `<a href="mailto:${usersEmail}">${usersName}</a> <span>${usersMessage}</span>`
 
     // Edit button
-
     const editButton = document.createElement("button")
     editButton.type = "button"
     editButton.innerText = "edit"
@@ -67,6 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
     removeButton.addEventListener("click", function () {
       const entry = removeButton.closest("li")
       entry.remove()
+      // Hide Messages section if there are no messages left
+      if (messageList.children.length === 0) {
+        messageSection.style.display = "none"
+      }
     })
 
     // Create button container (for vertical layout)
@@ -75,10 +83,14 @@ document.addEventListener("DOMContentLoaded", function () {
     messageButtons.appendChild(editButton)
     messageButtons.appendChild(removeButton)
 
-    // Append buttons
+    // Add buttons to message item, then append it to the list
     newMessage.appendChild(messageButtons)
     messageList.appendChild(newMessage)
 
+    // Show the Messages section now that there's at least one message
+    messageSection.style.display = "block"
+
+    // Reset form fields after submission
     messageForm.reset()
   })
 
@@ -137,4 +149,23 @@ document.addEventListener("DOMContentLoaded", function () {
         "Unable to load Projects. Please try again later."
       projectSection.appendChild(errorMessage)
     })
+
+  // NIGHT MODE TOGGLE
+  const toggleSwitch = document.getElementById("theme-toggle")
+
+  toggleSwitch.addEventListener("change", function () {
+    document.body.classList.toggle("dark-mode")
+
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark")
+    } else {
+      localStorage.setItem("theme", "light")
+    }
+  })
+
+  // Keep theme on reload
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode")
+    toggleSwitch.checked = true
+  }
 })
